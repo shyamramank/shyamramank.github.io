@@ -1,0 +1,240 @@
+/* CSS files add styling rules to your content */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 2em;
+  /* font-size: 100%; */
+  line-height: 1.5;
+  color: #06070B;
+}
+
+#wrapper {
+  /* max-width: 60rem; */
+  max-width: 1140px;
+  width: 100%;
+  margin: auto;
+  padding: 0 1em;
+  height: 100vh;
+  font-size: calc(12px + 1vw);
+  display:  grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:  "nav nav nav nav"
+  "header header header header"
+  "main main main main"
+  "footer footer footer footer"
+  text-align: center;
+}
+
+header {
+  background: url(https://cdn.glitch.com/9cce1f0a-ea60-4e5f-a23c-d1215a4cbe48%2Fimage_cricket.jpg?v=1614402563135) 00 no-repeat;
+  /* Add backround-size: cover to the header to make the image use full width of viewport and also to be RESPONSIVE to different screen sizes. However, adding this in img styling does not work well for responsive screen sizes. */
+  background-size: cover;
+  min-height: 934px;
+  /* width: 100%; */
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center;
+  grid-area:  header;
+}
+
+img {
+  display: block;
+  /* background-size: cover; */
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  /* background-color: rgba (0, 0, 0, 0.5); */
+}
+
+.hero-header-text {
+  /* Style for image and hero text overlay */
+  position: absolute;
+  max-width: 300px;
+  max-height: 70px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -70px 0 0 -150px;
+}
+
+.hero-heading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #73eafc;
+  font-size: 2rem;
+  word-spacing: 10px;
+}
+
+
+.hero-heading:hover,
+button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  background: rgb(0, 0, 0);
+  background: rgb(153, 102, 102);
+  transition: 0.5s ease;
+}
+
+#heading1,
+h2,
+ul > li {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  color: #A77F41;
+}
+
+button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 43px;
+  color: black;
+  border-radius: 33px;
+  padding: 0.75em;
+}
+
+p {
+  font-family: "Source Sans Pro", sans-serif;
+  max-width: 60ch;
+  font-size: 1.25rem;
+}
+
+/* Style for creating drop caps for first letter of each paragraph */
+p::first-letter {
+  float: left;
+  line-height: 2.188em;
+  font-size: 3.438em;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 0.85em;
+  margin-right: 0.85em;
+  margin-bottom: 0.313em;
+  border: outset black;
+}
+
+/* Use inline block to create navigation bar horizantally for bigger screen sizes */
+.nav-items {
+  display: inline-block;
+  float: left;
+  text-align: center;
+}
+
+.nav-items a {
+  color: #071236;
+  /* display: block; */
+  padding: 10px;
+}
+
+a {
+  color: blue;
+}
+
+a:hover {
+  color: green;
+}
+
+ul li a:hover {
+  text-decoration: underline overline;
+  text-decoration-color: black;
+}
+
+a:active {
+  color: brown;
+}
+
+.navigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #C4C2CB;
+  /* color: white; */
+  overflow: hidden;
+  grid-area: nav;
+}
+
+.nav-items a {
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 12px;
+  display: block;
+}
+
+main {
+  grid-area:  main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+@media (min-width: 650px) and (max-width: 1200px) {
+  .nav-items a {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 650px) {
+  .navigation {
+    width: 100%;
+  }
+  .nav-items {
+    float: none;
+    display: block;
+  }
+  
+  #wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-areas:
+      "nav"
+      "header"
+      "main"
+      "footer";
+  }
+
+  img {
+    background: url(https://cdn.glitch.com/9cce1f0a-ea60-4e5f-a23c-d1215a4cbe48%2Fimg-cricket2-sm.jpg?v=1614402336686) 00 no-repeat;
+    background-size: 300px;
+  }
+}
+  
+/* .nav-items {
+    float: none;
+    display: block;
+  }
+  
+  #wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-areas:
+      "nav"
+      "header"
+      "main"
+      "footer";
+  }
+
+  img {
+    background: url(https://cdn.glitch.com/9cce1f0a-ea60-4e5f-a23c-d1215a4cbe48%2Fimg-cricket2-sm.jpg?v=1614402336686) 00 no-repeat;
+    background-size: 300px;
+  }
+
+  /* .nav-items {
+    display: block;
+    float: none;
+    border-bottom: 1px solid black;
+    
+  }
+}
+*/
+
+footer {
+  font-family: "Source Sans Pro", sans-serif;
+  border: 2px solid black;
+  padding: 0.5em;
+}
